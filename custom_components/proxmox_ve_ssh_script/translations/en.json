@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Proxmox VE",
+        "description": "Enter the SSH connection details for your Proxmox VE host. The username must be a PAM user with sufficient permissions to run the desired scripts.",
+        "data": {
+          "host": "Host (IP or hostname)",
+          "port": "SSH port",
+          "username": "Username",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Unable to connect to host. Check the IP address and port.",
+      "invalid_auth": "Invalid username or password.",
+      "unknown": "Unexpected error. Check the Home Assistant log for details."
+    },
+    "abort": {
+      "already_configured": "This host is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Manage Scripts",
+        "menu_options": {
+          "add_script": "Add script",
+          "remove_script": "Remove script",
+          "finish": "Save and close"
+        }
+      },
+      "add_script": {
+        "title": "Add Script",
+        "description": "The script name is used as the button label in Home Assistant. The script content is executed as bash on the Proxmox VE node.",
+        "data": {
+          "script_name": "Script name",
+          "script_content": "Script content (bash)"
+        }
+      },
+      "remove_script": {
+        "title": "Remove Script",
+        "description": "Select the script you want to remove. The corresponding button entity will be removed on save.",
+        "data": {
+          "script_id": "Script to remove"
+        }
+      }
+    },
+    "error": {
+      "empty_name": "Script name cannot be empty.",
+      "empty_content": "Script content cannot be empty."
+    }
+  }
+}

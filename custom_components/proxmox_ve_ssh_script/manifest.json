@@ -1,0 +1,11 @@
+{
+  "domain": "proxmox_ve_ssh_script",
+  "name": "Proxmox VE SSH Script",
+  "version": "1.0.1",
+  "config_flow": true,
+  "documentation": "https://github.com/macokay/hacs-proxmox-ve-ssh-script",
+  "issue_tracker": "https://github.com/macokay/hacs-proxmox-ve-ssh-script/issues",
+  "requirements": ["asyncssh>=2.14.0"],
+  "iot_class": "local_push",
+  "codeowners": ["@macokay"]
+}

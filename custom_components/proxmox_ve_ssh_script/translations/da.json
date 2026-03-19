@@ -1,0 +1,55 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Opret forbindelse til Proxmox VE",
+        "description": "Indtast SSH-forbindelsesoplysninger til din Proxmox VE-host. Brugeren skal være en PAM-bruger med tilstrækkelige rettigheder til at køre de ønskede scripts.",
+        "data": {
+          "host": "Host (IP eller hostname)",
+          "port": "SSH-port",
+          "username": "Brugernavn",
+          "password": "Adgangskode"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Kan ikke oprette forbindelse til host. Tjek IP-adressen og porten.",
+      "invalid_auth": "Forkert brugernavn eller adgangskode.",
+      "unknown": "Uventet fejl. Tjek Home Assistant-loggen for detaljer."
+    },
+    "abort": {
+      "already_configured": "Denne host er allerede konfigureret."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Administrer scripts",
+        "menu_options": {
+          "add_script": "Tilføj script",
+          "remove_script": "Fjern script",
+          "finish": "Gem og luk"
+        }
+      },
+      "add_script": {
+        "title": "Tilføj script",
+        "description": "Scriptnavnet bruges som knaplabel i Home Assistant. Scriptindholdet eksekveres som bash på Proxmox VE-noden.",
+        "data": {
+          "script_name": "Scriptnavn",
+          "script_content": "Scriptindhold (bash)"
+        }
+      },
+      "remove_script": {
+        "title": "Fjern script",
+        "description": "Vælg det script du vil fjerne. Den tilsvarende knapentitet fjernes ved gemning.",
+        "data": {
+          "script_id": "Script der skal fjernes"
+        }
+      }
+    },
+    "error": {
+      "empty_name": "Scriptnavnet må ikke være tomt.",
+      "empty_content": "Scriptindholdet må ikke være tomt."
+    }
+  }
+}
