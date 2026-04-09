@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2] - 2026-04-09
+
+### Changed
+- Brand icon replaced: PNG removed, SVG added (`brand/icon.svg`)
+- README restructured to standard template format — logo, badges, Buy Me A Coffee, structured sections
+- Issue templates updated to standard format — added Actual behaviour section and log filter instructions
+
 ## [1.0.1] - 2026-03-19
 
 ### Changed

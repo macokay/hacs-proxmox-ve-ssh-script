@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="grad-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF8C20"/>
+      <stop offset="100%" stop-color="#D66000"/>
+    </linearGradient>
+    <linearGradient id="grad-black" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A2A2A"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="grad-term" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3A3A3C"/>
+      <stop offset="100%" stop-color="#1C1C1E"/>
+    </linearGradient>
+
+    <!-- Master Chevron Shape (Pointing Right) -->
+    <path id="chevron" 
+          d="M 236 256 
+             L 100 120 
+             C 80 100, 40 140, 60 160 
+             Q 150 256, 60 352 
+             C 40 372, 80 412, 100 392 
+             Z" />
+             
+    <!-- Logo Shadow -->
+    <filter id="logo-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.12" />
+    </filter>
+             
+    <!-- Terminal Icon Shadow -->
+    <filter id="term-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="-8" dy="18" stdDeviation="24" flood-color="#000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <g filter="url(#logo-shadow)">
+    <!-- Right (Orange) -->
+    <use href="#chevron" transform="rotate(180 256 256)" fill="url(#grad-orange)" />
+    <!-- Bottom (Black) -->
+    <use href="#chevron" transform="rotate(90 256 256)" fill="url(#grad-black)" />
+    <!-- Left (Orange) -->
+    <use href="#chevron" transform="rotate(0 256 256)" fill="url(#grad-orange)" />
+    <!-- Top (Black) -->
+    <use href="#chevron" transform="rotate(-90 256 256)" fill="url(#grad-black)" />
+  </g>
+
+  <!-- SSH Terminal Icon -->
+  <g filter="url(#term-shadow)">
+    <!-- Terminal Background -->
+    <rect x="280" y="260" width="200" height="200" rx="44" ry="44" fill="url(#grad-term)" stroke="#4A4A4C" stroke-width="2" />
+    
+    <!-- Greater Than Prompt ">" -->
+    <polyline points="320,295 345,310 320,325" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Underscore Cursor "_" -->
+    <line x1="355" y1="330" x2="385" y2="330" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" />
+    
+    <!-- SSH Text -->
+    <text x="380" y="420" font-family="'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="76" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">SSH</text>
+  </g>
+</svg>
