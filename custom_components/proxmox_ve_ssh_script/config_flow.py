@@ -39,7 +39,6 @@ from .const import (
     CONF_SCRIPT_NAME,
     CONF_SCRIPTS,
     DEFAULT_PORT,
-    DEFAULT_TIMEOUT,
     DOMAIN,
 )
 
