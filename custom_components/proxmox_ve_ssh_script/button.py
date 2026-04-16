@@ -4,6 +4,7 @@ Each configured script is represented as a button entity. Pressing the button
 establishes an SSH connection to the Proxmox VE host and executes the script.
 stdout/stderr and exit codes are logged to the Home Assistant log.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -39,9 +40,7 @@ async def async_setup_entry(
     data: dict[str, Any] = hass.data[DOMAIN][entry.entry_id]
     scripts: list[dict[str, Any]] = data.get(CONF_SCRIPTS, [])
 
-    async_add_entities(
-        ProxmoxSSHScriptButton(entry, script) for script in scripts
-    )
+    async_add_entities(ProxmoxSSHScriptButton(entry, script) for script in scripts)
 
 
 class ProxmoxSSHScriptButton(ButtonEntity):
@@ -77,7 +76,9 @@ class ProxmoxSSHScriptButton(ButtonEntity):
         script_name: str = self._script[CONF_SCRIPT_NAME]
         script_content: str = self._script[CONF_SCRIPT_CONTENT]
 
-        _LOGGER.debug("Pressing button '%s' — connecting to %s:%d", script_name, host, port)
+        _LOGGER.debug(
+            "Pressing button '%s' — connecting to %s:%d", script_name, host, port
+        )
 
         try:
             conn = await asyncio.wait_for(

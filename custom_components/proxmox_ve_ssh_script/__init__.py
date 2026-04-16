@@ -3,6 +3,7 @@
 Allows running bash scripts on a Proxmox VE node via SSH.
 Each configured script is exposed as a button entity in Home Assistant.
 """
+
 from __future__ import annotations
 
 import logging

@@ -9,6 +9,7 @@ Options flow (post-setup):
   - Scripts are stored in config entry options as a list of dicts.
   - Adding/removing a script reloads the integration to sync button entities.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -203,7 +204,11 @@ class ProxmoxVESSHScriptOptionsFlow(OptionsFlow):
 
         if user_input is not None:
             script_id = user_input.get(CONF_SCRIPT_ID)
-            removed = [s[CONF_SCRIPT_NAME] for s in self._scripts if s[CONF_SCRIPT_ID] == script_id]
+            removed = [
+                s[CONF_SCRIPT_NAME]
+                for s in self._scripts
+                if s[CONF_SCRIPT_ID] == script_id
+            ]
             self._scripts = [s for s in self._scripts if s[CONF_SCRIPT_ID] != script_id]
             if removed:
                 _LOGGER.debug("Removed script '%s'", removed[0])
