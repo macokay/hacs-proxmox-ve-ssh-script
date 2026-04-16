@@ -1,5 +1,4 @@
 {
   "name": "Proxmox VE SSH Script",
-  "render_readme": true,
-  "icon": "https://raw.githubusercontent.com/macokay/hacs-proxmox-ve-ssh-script/main/icon.png"
+  "render_readme": true
 }
